@@ -35,6 +35,7 @@ enum device_select_option {
 	RECOVER,
 	FASTBOOT,
 	BACK,
+	BOOT_INTERNAL,
 
 	CONTINUE,
 };

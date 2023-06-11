@@ -104,7 +104,8 @@ static char *fastboot_option_menu[] = {
 		[0] = "START\n",
 		[1] = "Restart bootloader\n",
 		[2] = "Recovery mode\n",
-		[3] = "Power off\n"};
+		[3] = "Power off\n",
+		[4] = "eMMC/Flash boot\n"};
 
 static int big_factor = 2;
 static int common_factor = 1;

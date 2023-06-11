@@ -90,6 +90,7 @@ static uint32_t fastboot_index_action[] = {
 		[1] = FASTBOOT,
 		[2] = RECOVER,
 		[3] = POWEROFF,
+		[4] = BOOT_INTERNAL,
 };
 
 static uint32_t unlock_index_action[] = {
@@ -144,6 +145,12 @@ static void update_device_status(struct select_msg_info* msg_info, int reason)
 			break;
 		case FASTBOOT:
 			reboot_device(FASTBOOT_MODE);
+			break;
+		case BOOT_INTERNAL:
+			if (target_is_emmc_boot())
+				boot_linux_from_mmc();
+			else
+				boot_linux_from_flash();
 			break;
 		case CONTINUE:
 			display_image_on_screen();
